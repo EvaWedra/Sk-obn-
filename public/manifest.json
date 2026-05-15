@@ -1,0 +1,26 @@
+{
+  "name": "Ubytovanie",
+  "short_name": "Ubytovanie",
+  "description": "Informácie a kontakt pre klientov",
+  "start_url": "/sk",
+  "display": "standalone",
+  "background_color": "#fffdf5",
+  "theme_color": "#2d6a5f",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "categories": ["lifestyle", "travel"]
+}
