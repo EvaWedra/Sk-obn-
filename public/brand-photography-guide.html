@@ -932,6 +932,205 @@
 
 </div>
 
+<!-- SKILL DOWNLOAD -->
+<div style="background: #1E1E2E; padding: 80px 24px;">
+  <div style="max-width: 860px; margin: 0 auto;">
+
+    <div style="text-align: center; margin-bottom: 48px;">
+      <div style="display: inline-block; background: rgba(150,199,179,0.15); border: 1px solid rgba(150,199,179,0.3); color: #96C7B3; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 8px 20px; border-radius: 100px; margin-bottom: 20px;">Kompletný Skill</div>
+      <h2 style="color: white; font-size: 32px; font-weight: 800; margin-bottom: 12px;">Ako používať tento skill</h2>
+      <p style="color: rgba(255,255,255,0.55); font-size: 16px; max-width: 520px; margin: 0 auto;">Vyber si spôsob podľa toho aký nástroj používaš. Skopíruj text a vlož ho na správne miesto.</p>
+    </div>
+
+    <!-- HOW TO USE CARDS -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 48px;">
+
+      <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px;">
+        <div style="font-size: 24px; margin-bottom: 12px;">🤖</div>
+        <div style="color: #D7897F; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;">Claude Code</div>
+        <div style="color: white; font-size: 15px; font-weight: 600; margin-bottom: 10px;">Slash command skill</div>
+        <div style="color: rgba(255,255,255,0.55); font-size: 13px; line-height: 1.7;">Ulož súbor do <code style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px; color: #96C7B3;">.claude/commands/brand-photography.md</code> vo svojom projekte. Potom použi <code style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px; color: #96C7B3;">/brand-photography</code> v Claude Code.</div>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px;">
+        <div style="font-size: 24px; margin-bottom: 12px;">💎</div>
+        <div style="color: #F9B95C; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;">Gemini Gem</div>
+        <div style="color: white; font-size: 15px; font-weight: 600; margin-bottom: 10px;">Systémové inštrukcie</div>
+        <div style="color: rgba(255,255,255,0.55); font-size: 13px; line-height: 1.7;">Skopíruj sekciu <strong style="color: rgba(255,255,255,0.8);">KROK 1–6</strong> a vlož ju do systémových inštrukcií svojho Gemu. Gem si bude pamätať celý workflow automaticky.</div>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px;">
+        <div style="font-size: 24px; margin-bottom: 12px;">💬</div>
+        <div style="color: #96C7B3; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;">ChatGPT Custom GPT</div>
+        <div style="color: white; font-size: 15px; font-weight: 600; margin-bottom: 10px;">System prompt</div>
+        <div style="color: rgba(255,255,255,0.55); font-size: 13px; line-height: 1.7;">Skopíruj celý text skillu a vlož ho do poľa <strong style="color: rgba(255,255,255,0.8);">Instructions</strong> pri vytváraní Custom GPT na chat.openai.com.</div>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px;">
+        <div style="font-size: 24px; margin-bottom: 12px;">📋</div>
+        <div style="color: #6398A9; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;">Akýkoľvek AI chat</div>
+        <div style="color: white; font-size: 15px; font-weight: 600; margin-bottom: 10px;">Priamy prompt</div>
+        <div style="color: rgba(255,255,255,0.55); font-size: 13px; line-height: 1.7;">Skopíruj celý text, vlož ho na začiatok novej konverzácie v akomkoľvek AI chate a potom prikladaj fotku oblečenia.</div>
+      </div>
+
+    </div>
+
+    <!-- FULL SKILL TEXT -->
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden;">
+
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 28px; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <div>
+          <div style="color: white; font-size: 15px; font-weight: 600;">brand-photography.md</div>
+          <div style="color: rgba(255,255,255,0.4); font-size: 12px; margin-top: 2px;">Kompletný skill — skopíruj všetko</div>
+        </div>
+        <button onclick="copySkill()" id="copyBtn" style="background: #96C7B3; color: #1E1E2E; border: none; padding: 10px 22px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s;">
+          Kopírovať
+        </button>
+      </div>
+
+      <pre id="skillText" style="padding: 28px; color: rgba(255,255,255,0.75); font-size: 13px; line-height: 1.8; overflow-x: auto; white-space: pre-wrap; font-family: 'Courier New', monospace; max-height: 600px; overflow-y: auto; margin: 0;"># Brand Photography Skill
+
+Keď je tento skill spustený, postupuj presne podľa týchto krokov. Nepreskoč žiadny krok a čakaj na potvrdenie pred každým ďalším.
+
+---
+
+## KROK 1 — Analyzuj oblečenie
+
+Pozri sa na priloženú fotku oblečenia a opíš PRESNE čo vidíš:
+- Každý kus oblečenia: typ, strih, farba (ultra konkrétna — nie "červená" ale "sýta šarlátová červená ako logo Coca-Coly, NOT burgundy, NOT maroon")
+- Doplnky: kabelka, topánky, šperky, čiapka...
+- Materiál ak je viditeľný: ľan, denim, pletenina, bavlna...
+- Vzory: ak sú pruhy, opíš ich šírku a typ ("bold equal-width horizontal stripes, NOT fine stripes")
+
+Opýtaj sa: "Vidím toto oblečenie: [tvoj opis]. Je to správne, alebo mám niečo opraviť?"
+Počkaj na potvrdenie.
+
+### Špeciálny prípad — len jeden kus oblečenia
+Ak vidíš len jeden kus, opýtaj sa:
+"Vidím len [názov kusu]. Chceš:
+- A) Navrhniem 3 outfit kombinácie — ty vyberieš
+- B) Ty mi dopovieš čo k tomu chceš obliecť
+- C) Zvyšok outfitu nechaj neutrálny (džínsy / tričko / tenisky) — hero kus je tento jeden"
+
+---
+
+## KROK 2 — Model / Modelka
+
+Opýtaj sa: "Máš fotku modelky alebo modela?
+- A) Áno — mám ju v Geme alebo inom nastavení nástroja → prompty budú obsahovať len odkaz na referenčnú fotku
+- B) Áno — prikladám ju teraz → prompty budú obsahovať len odkaz na priloženú fotku
+- C) Nie, nemám fotku → Claude navrhne popis, ty ho schválíš a vloží ho celý do každého promptu"
+
+Ak A alebo B: vložíš do každého promptu: "Maintain exact same model appearance as the reference photo. Same face, hair, skin tone, body type, do not change."
+Ak C: opýtaj sa na pohlavie, vek, farba vlasov, typ postavy, štýl → navrhni popis → čakaj na potvrdenie → vlož celý, slovo za slovom, do každého promptu.
+
+---
+
+## KROK 3 — Nástroj, prostredie a nálada
+
+Opýtaj sa všetky naraz:
+1. Nástroj — Gemini Gem / Midjourney / DALL-E / Ideogram / Neviem
+2. Platforma — Instagram / Facebook / Vinted / web / e-shop / stories / viacero?
+3. Nálada značky — luxusná / casual / minimalistická / boho / streetwear / French girl / korporátna / iné?
+4. Prostredie — máš niečo v hlave alebo navrhniem 3 možnosti podľa oblečenia?
+5. Štýl fotenia:
+   - Profesionálny módny fotograf na lokácii — modelka vie že je fotená, zámerný pohyb, prostredie živé
+   - Candid / street style — modelka je súčasťou scény, nikto ju špeciálne nefotí
+
+---
+
+## KROK 4 — Uzamkni technické parametre
+
+Podľa nálady vyber a uzamkni pre CELÝ shoot (identické vo všetkých 6 záberoch):
+
+- Teplý / casual: Kodak Portra 400, 85mm, warm directional afternoon sunlight
+- Luxusný / editorial: Fujifilm 400H, 85mm, soft diffused natural daylight
+- Streetwear / urban: Ilford HP5 B&W, 50mm, harsh directional side light
+- Boho / outdoor: Kodak Gold 200, 50mm, warm golden hour backlight
+- French girl / parisian: Kodak Portra 400, 85mm, soft warm natural afternoon light
+
+---
+
+## KROK 5 — Vygeneruj 6 promptov
+
+POVINNÉ PRAVIDLÁ:
+
+PRAVIDLO 1 — ŽIVÉ PROSTREDIE:
+Každý prompt opisuje čo sa deje OKOLO modelky — nie len kde stojí.
+Zlé: "standing in front of a busy restaurant"
+Dobré: "seated at a corner table, waiter passing behind her carrying a tray, other diners laughing at a nearby table"
+
+PRAVIDLO 2 — ŠTÝL FOTOGRAFA:
+Profesionálny: pridaj "shot on location by a fashion photographer, surrounding environment fully alive and real, people around her naturally going about their activities"
+Candid: pridaj "candid documentary style, shot as if captured by a bystander, model is part of the crowd, genuine unposed moment"
+V oboch prípadoch modelka má KONKRÉTNU AKCIU — nikdy len státie.
+
+PRAVIDLO 3 — MODEL:
+Má fotku → "Maintain exact same model appearance as the reference photo."
+Nemá fotku → plný uzamknutý popis slovo za slovom v každom prompte
+
+PRAVIDLO 4 — OBLEČENIE vždy v texte s negatívnymi opismi (NOT burgundy, NOT thin stripes...)
+
+FORMÁT KAŽDÉHO PROMPTU:
+[MODEL]
+[TYP ZÁBERU + framing]
+wearing [PRESNÝ OPIS OBLEČENIA s negatívnymi opismi]
+[KONKRÉTNA AKCIA / GESTO]
+[PROSTREDIE — čo sa deje okolo nej]
+[ŠTÝL FOTOGRAFA]
+[UZAMKNUTÉ TECHNICKÉ PARAMETRE]
+DO NOT change: model appearance, clothing colors, clothing style.
+
+6 TYPOV ZÁBEROV:
+1. Široký záber — full body head to toe, negative space for text — web banner, Vinted hlavná fotka
+2. Trištvrtový záber — framed from mid-thigh up — Instagram, e-shop
+3. Bočný profil — side profile, full silhouette — Instagram, Facebook
+4. Detailný záber — extreme close-up na detail látky / kabelku / topánky — Vinted
+5. Zadný uhol — rear angle, walking away or looking back — Vinted, Instagram
+6. Lifestyle záber — candid moment, smiech / káva / pohyb — Facebook stories, newsletter
+
+---
+
+## KROK 6 — Konzistencia podľa nástroja
+
+GEMINI GEM:
+Skopíruj popis modelky + oblečenia do systémových inštrukcií Gemu (raz).
+Pre každý záber začni NOVÝ chat v Geme — predchádza driftu.
+
+MIDJOURNEY:
+Použi --cref [URL fotky modelky] pre konzistenciu tváre.
+Rovnaké --seed číslo vo všetkých promptoch.
+
+DALL-E / ChatGPT:
+Každý prompt musí byť plne sebestačný.
+Začni novú konverzáciu pre každý záber zvlášť.
+
+NEZNÁMY NÁSTROJ:
+Prompty sú navrhnuté ako plne sebestačné.
+KĽÚČOVÁ RADA: Každý záber = nový chat. Nikdy nevkladaj viac promptov za sebou do toho istého chatu.</pre>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+function copySkill() {
+  const text = document.getElementById('skillText').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.innerText = '✓ Skopírované!';
+    btn.style.background = '#6398A9';
+    btn.style.color = 'white';
+    setTimeout(() => {
+      btn.innerText = 'Kopírovať';
+      btn.style.background = '#96C7B3';
+      btn.style.color = '#1E1E2E';
+    }, 2500);
+  });
+}
+</script>
+
 <!-- FOOTER -->
 <div class="footer">
   <h3>Brand Photography Skill</h3>
