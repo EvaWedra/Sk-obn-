@@ -19,6 +19,20 @@ Počkaj na potvrdenie. Ak používateľ opraví niečo, aktualizuj opis.
 
 ---
 
+### Špeciálny prípad — len jeden kus oblečenia
+
+Ak na fotke vidíš len **jeden kus** (napr. len košeľu, len nohavice, len bundu), opýtaj sa:
+
+> "Vidím len [názov kusu]. Chceš:
+>
+> A) Navrhniem 3 outfit kombinácie ktoré k tomu pasujú — ty vyberieš
+> B) Ty mi dopovieš čo k tomu chceš obliecť
+> C) Zvyšok outfitu nechaj neutrálny (klasické džínsy / čisté biele tričko / jednoduché tenisky) — hero kus je tento jeden"
+
+Počkaj na odpoveď a podľa toho uzamkni celý outfit pred pokračovaním.
+
+---
+
 ## KROK 2 — Uzamkni model
 
 Opýtaj sa:
