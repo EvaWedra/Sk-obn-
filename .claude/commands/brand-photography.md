@@ -36,17 +36,20 @@ Potvrď popis s používateľom pred pokračovaním.
 
 ---
 
-## KROK 3 — Prostredie a nálada
+## KROK 3 — Prostredie, nálada a štýl fotografa
 
-Opýtaj sa VŠETKY TRI otázky naraz:
+Opýtaj sa VŠETKY ŠTYRI otázky naraz:
 
-> "Posledné 3 otázky pred generovaním:
+> "Posledné otázky pred generovaním:
 >
 > 1. **Platforma** — kde skončia tieto fotky? (web hero banner / Instagram feed / e-shop / LinkedIn / stories / viacero?)
 > 2. **Štýl značky** — aká je nálada? (luxusná / casual / minimalistická / boho / streetwear / korporátna / iné?)
-> 3. **Prostredie** — máš niečo konkrétne v hlave (napr. Paríž, štúdio, príroda)? Alebo mám navrhnúť 3 možnosti podľa oblečenia?"
+> 3. **Prostredie** — máš niečo konkrétne v hlave (napr. Paríž, štúdio, príroda)? Alebo mám navrhnúť 3 možnosti podľa oblečenia?
+> 4. **Štýl fotenia** — ktorý z týchto dvoch?
+>    - **Profesionálny fashion fotograf:** fotograf vedome fotí modelku, ona je stredobod záberu, prostredie okolo nej žije ale ona je v popredí — výsledok: módna kampaň na reálnom mieste
+>    - **Candid / street style:** modelka je súčasťou scény, nikto ju špeciálne nefotí, zachytená v prirodzenom momente — výsledok: vyzerá ako náhodná fotka niekoho kto bol práve tam"
 
-Ak chcú návrh, navrhni 3 prostredí ktoré pasujú k outfitu a nechaj vybrať.
+Ak chcú návrh prostredia, navrhni 3 možnosti ktoré pasujú k outfitu a nechaj vybrať.
 
 ---
 
@@ -77,41 +80,85 @@ Teraz vygeneruj VŠETKÝCH 6 záberov. Každý prompt musí obsahovať:
 1. **Uzamknutý popis modela** — slovo za slovom rovnaký
 2. **Uzamknutý opis oblečenia** — presné farby, strih, doplnky
 3. **Typ záberu** — špecifický framing
-4. **Prostredie** — konzistentné naprieč zábermi
+4. **Prostredie so životom** — čo sa deje OKOLO modelky (nie len kde stojí)
 5. **Uzamknuté technické parametre** — film stock, objektív, svetlo
 
-**Formát každého promptu:**
+---
+
+### PRAVIDLO ŽIVÉHO PROSTREDIA — POVINNÉ PRE KAŽDÝ PROMPT
+
+**Každý prompt musí opisovať čo sa deje OKOLO modelky, nielen kde sa nachádza.**
+Ľudia okolo nej žijú vlastným životom. Scéna existovala pred ňou a bude existovať po nej.
+Modelka nie je prilepená na pozadie — je jeho súčasťou.
+
+**Zlé:** `standing in front of a busy restaurant`
+**Dobré:** `seated at a small corner table inside a packed restaurant, waiter passing behind her, other diners laughing at a nearby table, warm ambient noise suggested by the scene`
+
+---
+
+### PRAVIDLO ŠTÝLU FOTOGRAFA
+
+Aplikuj podľa výberu v Kroku 3:
+
+**A) Profesionálny fashion fotograf:**
+- Modelka vie že je fotená, jej pohyb je zámerný ale prirodzený
+- Fotograf stojí blízko, vedome ju vyberá z prostredia ako subjekt
+- Scéna okolo nej je reálna a živá, nie studio backdrop
+- Pridaj do promptu: `shot on location by a fashion photographer, model is the deliberate subject, surrounding environment fully alive and real, people around her naturally going about their activities`
+- Modelka má konkrétnu **akciu alebo gesto** — nie statickú pózu:
+  - `adjusting her cap mid-laugh` / `turning toward the camera with a natural smile` / `glancing over her shoulder` / `caught mid-stride`
+
+**B) Candid / street style:**
+- Modelka je súčasťou davu, nikto ju špeciálne nefotí
+- Pôsobí dojmom že o fotoaparáte nevie alebo ho ignoruje
+- Ľudia okolo nej ju nevnímajú — ona je jednou z nich
+- Pridaj do promptu: `candid documentary style, shot as if captured by a bystander with a phone or small camera, model is part of the crowd, unaware or unbothered by the camera, people around her going about their own business, genuine unposed moment`
+- Modelka má **prirodzený pohyb** — nie pózovanie:
+  - `laughing at something off-camera` / `checking her phone` / `sipping coffee, looking at the field` / `walking through the crowd`
+
+---
+
+### Formát každého promptu:
 
 ```
 [TYP ZÁBERU] — [PLATFORMA]
 
 [POPIS MODELA], [TYP ZÁBERU FRAMING], wearing [PRESNÝ OPIS OBLEČENIA].
-[PROSTREDIE A SCÉNA].
+[KONKRÉTNA AKCIA / GESTO modelky].
+[PROSTREDIE — čo sa deje okolo nej, kto je tam, aká je atmosféra].
+[ŠTÝL FOTOGRAFA — fashion on location ALEBO candid].
 [UZAMKNUTÉ TECHNICKÉ PARAMETRE].
 [FAREBNÁ GRADÁCIA], [NÁLADA].
-Editorial fashion photography, high-end brand campaign.
 DO NOT change: model appearance, clothing colors, clothing style.
 ```
+
+---
 
 ### 6 typov záberov:
 
 **1. Široký záber** — web hero banner, plagát
 - Framing: `full body head to toe, ample negative space above for text overlay`
+- Akcia: pohyb alebo gesto — nikdy len státie
 
 **2. Trištvrtový záber** — Instagram feed, e-shop
-- Framing: `three-quarter shot, framed from mid-thigh up, looking directly at camera`
+- Framing: `three-quarter shot, framed from mid-thigh up`
+- Akcia: priamy kontakt s kamerou alebo prirodzený pohyb
 
 **3. Bočný profil** — silueta, štruktúra oblečenia
-- Framing: `side profile, looking away from camera, full silhouette visible`
+- Framing: `side profile, full silhouette visible`
+- Akcia: pohľad do prostredia, zaujatá scénou okolo nej
 
 **4. Detailný záber** — textúra, materiál, doplnky
-- Framing: `extreme close-up, focus on [najzaujímavejší detail outfitu: látka / kabelka / topánky / golier]`
+- Framing: `extreme close-up, focus on [najzaujímavejší detail: látka / kabelka / topánky / šperky / golier]`
+- Prostredie v pozadí jemne naznačené (bokeh)
 
-**5. Zadný uhol** — splývavosť, zadné detaily
-- Framing: `rear angle shot, model walking away or looking back over shoulder`
+**5. Zadný uhol** — silueta, detaily zozadu
+- Framing: `rear angle shot`
+- Akcia: `walking into the scene` / `looking back over shoulder` / `stepping into the crowd`
 
 **6. Lifestyle záber** — stories, newsletter, brand storytelling
-- Framing: `candid lifestyle moment, natural movement [walking / laughing / holding coffee / sitting]`
+- Framing: `candid lifestyle moment`
+- Akcia: konkrétny prirodzený moment s emóciou — smiech, pohyb, interakcia s prostredím
 
 ---
 
