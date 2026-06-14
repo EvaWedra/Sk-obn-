@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Photography Skill — Návod</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --nectarine: #D7897F;
+      --peche: #F9B95C;
+      --menthe: #96C7B3;
+      --lagune: #6398A9;
+      --bg: #FDF8F5;
+      --text: #2C2C2C;
+      --muted: #7A7A7A;
+      --card: #FFFFFF;
+      --border: #EDE8E3;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* COVER */
+    .cover {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--nectarine) 0%, var(--peche) 50%, var(--menthe) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      top: -100px;
+      right: -100px;
+    }
+
+    .cover::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      bottom: -80px;
+      left: -60px;
+    }
+
+    .cover-badge {
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+    }
+
+    .cover h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      max-width: 700px;
+    }
+
+    .cover p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      max-width: 520px;
+      margin-bottom: 48px;
+      font-weight: 400;
+    }
+
+    .cover-tags {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .cover-tag {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    /* INTRO */
+    .intro-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 64px;
+      text-align: center;
+    }
+
+    .intro-box h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--lagune);
+    }
+
+    .intro-box p {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+
+    .workflow-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .workflow-pill {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .workflow-arrow {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    /* SECTION LABEL */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .step-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .step-number.c1 { background: var(--nectarine); }
+    .step-number.c2 { background: var(--peche); color: #2C2C2C; }
+    .step-number.c3 { background: var(--menthe); color: #2C2C2C; }
+    .step-number.c4 { background: var(--lagune); }
+    .step-number.c5 { background: var(--nectarine); }
+    .step-number.c6 { background: var(--peche); color: #2C2C2C; }
+
+    .section-label h2 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .section-label .subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight {
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 12px 0;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .highlight.nectarine { background: #FDF0EE; border-left: 4px solid var(--nectarine); color: #7A3D37; }
+    .highlight.peche { background: #FEF8EE; border-left: 4px solid var(--peche); color: #7A5A1E; }
+    .highlight.menthe { background: #EEF8F5; border-left: 4px solid var(--menthe); color: #2E6B5A; }
+    .highlight.lagune { background: #EEF4F8; border-left: 4px solid var(--lagune); color: #2C4F63; }
+
+    /* OPTIONS */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .option {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--bg);
+    }
+
+    .option-letter {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .option-letter.n { background: var(--nectarine); }
+    .option-letter.p { background: var(--peche); color: #2C2C2C; }
+    .option-letter.m { background: var(--menthe); color: #2C2C2C; }
+
+    .option-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .option-text span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* SHOT TYPES GRID */
+    .shots-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .shots-grid { grid-template-columns: 1fr; }
+    }
+
+    .shot-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shot-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+
+    .shot-card.s1::before { background: var(--nectarine); }
+    .shot-card.s2::before { background: var(--peche); }
+    .shot-card.s3::before { background: var(--menthe); }
+    .shot-card.s4::before { background: var(--lagune); }
+    .shot-card.s5::before { background: var(--nectarine); }
+    .shot-card.s6::before { background: var(--peche); }
+
+    .shot-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .shot-name {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .shot-platform {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .shot-rule {
+      font-size: 13px;
+      color: var(--text);
+      background: var(--bg);
+      padding: 10px 14px;
+      border-radius: 8px;
+      line-height: 1.5;
+    }
+
+    /* RULES */
+    .rules-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .rule-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .rule-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .rule-icon.n { background: #FDF0EE; }
+    .rule-icon.p { background: #FEF8EE; }
+    .rule-icon.m { background: #EEF8F5; }
+    .rule-icon.l { background: #EEF4F8; }
+
+    .rule-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .rule-text p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* TECH TABLE */
+    .tech-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .tech-table th {
+      text-align: left;
+      padding: 10px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .tech-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .tech-table tr:last-child td { border-bottom: none; }
+
+    .tech-table tr:hover td { background: var(--bg); }
+
+    .mood-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .mood-tag.n { background: #FDF0EE; color: var(--nectarine); }
+    .mood-tag.p { background: #FEF8EE; color: #C4890A; }
+    .mood-tag.m { background: #EEF8F5; color: #2E6B5A; }
+    .mood-tag.l { background: #EEF4F8; color: var(--lagune); }
+
+    /* TOOL CARDS */
+    .tool-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .tool-grid { grid-template-columns: 1fr; }
+    }
+
+    .tool-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      background: var(--card);
+    }
+
+    .tool-name {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tool-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .tool-dot.n { background: var(--nectarine); }
+    .tool-dot.p { background: var(--peche); }
+    .tool-dot.m { background: var(--menthe); }
+    .tool-dot.l { background: var(--lagune); }
+
+    .tool-tip {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .tool-tip strong { color: var(--text); }
+
+    .code-pill {
+      display: inline-block;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 12px;
+      color: var(--lagune);
+      font-weight: 600;
+    }
+
+    /* DIVIDER */
+    .section-divider {
+      margin: 64px 0;
+      border: none;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--text);
+      color: white;
+      text-align: center;
+      padding: 48px 24px;
+    }
+
+    .footer p {
+      font-size: 14px;
+      opacity: 0.6;
+      margin-top: 8px;
+    }
+
+    .footer h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    /* KEY RULE BOX */
+    .key-rule {
+      background: linear-gradient(135deg, var(--nectarine), var(--peche));
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin: 20px 0;
+      color: white;
+    }
+
+    .key-rule h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      opacity: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .key-rule p {
+      font-size: 15px;
+      line-height: 1.7;
+      opacity: 0.95;
+    }
+
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 500px) {
+      .compare { grid-template-columns: 1fr; }
+    }
+
+    .compare-item {
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .compare-bad { background: rgba(0,0,0,0.15); }
+    .compare-bad::before { content: '✗ '; opacity: 0.7; }
+    .compare-good { background: rgba(255,255,255,0.2); }
+    .compare-good::before { content: '✓ '; }
+
+    @media print {
+      .cover { min-height: auto; padding: 40px; page-break-after: always; }
+      .section-divider { margin: 40px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-badge">Claude Skill · Brand Photography</div>
+  <h1>Ako vytvoriť brand fotky pomocou AI</h1>
+  <p>Krok za krokom od fotky oblečenia až po hotové prompty pre profesionálny brand photoshoot — bez fotografa, bez štúdia.</p>
+  <div class="cover-tags">
+    <span class="cover-tag">📷 6 typov záberov</span>
+    <span class="cover-tag">🎨 Konzistentný vizuál</span>
+    <span class="cover-tag">⚡ Gemini · Midjourney · DALL-E</span>
+    <span class="cover-tag">🛍 Instagram · Facebook · Vinted</span>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- INTRO -->
+  <div class="intro-box">
+    <h2>Ako tento návod funguje</h2>
+    <p>Tento skill ti pomôže vygenerovať profesionálne brand fotky pomocou AI — stačí priložiť fotku oblečenia a odpovedať na niekoľko otázok. Claude sa postará o zvyšok.</p>
+    <div class="workflow-row">
+      <span class="workflow-pill">📎 Fotka oblečenia</span>
+      <span class="workflow-arrow">→</span>
+      <span class="workflow-pill">🙋 Model</span>
+      <span class="workflow-arrow">→</span>
+      <span class="workflow-pill">🎯 Prostredie</span>
+      <span class="workflow-arrow">→</span>
+      <span class="workflow-pill">✨ 6 promptov</span>
+      <span class="workflow-arrow">→</span>
+      <span class="workflow-pill">🖼 Hotové fotky</span>
+    </div>
+  </div>
+
+  <!-- KROK 1 -->
+  <div class="section-label">
+    <div class="step-number c1">1</div>
+    <div>
+      <h2>Analyzuj oblečenie</h2>
+      <div class="subtitle">Claude prečíta priloženú fotku a opíše každý kus presne</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Čo Claude opíše</div>
+    <div class="rules-list">
+      <div class="rule-item">
+        <div class="rule-icon n">👗</div>
+        <div class="rule-text">
+          <strong>Oblečenie</strong>
+          <p>Každý kus: typ, strih, farba — ultra konkrétna. Nie "červená" ale "sýta šarlátová červená ako logo Coca-Coly".</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-icon p">👜</div>
+        <div class="rule-text">
+          <strong>Doplnky</strong>
+          <p>Kabelka, topánky, šperky, čiapka — s presnou farbou a materiálom.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-icon m">🧵</div>
+        <div class="rule-text">
+          <strong>Materiál a vzory</strong>
+          <p>Ak sú pruhy, opíše ich šírku: "bold equal-width horizontal stripes" — nie len "prúžkované".</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Špeciálny prípad — len jeden kus oblečenia</div>
+    <p style="margin-bottom: 14px; font-size: 15px;">Ak priložíš len košeľu, nohavice alebo inú jednu vec, Claude sa opýta:</p>
+    <div class="options">
+      <div class="option">
+        <div class="option-letter n">A</div>
+        <div class="option-text">
+          <strong>Navrhniem 3 outfit kombinácie</strong>
+          <span>Claude navrhne 3 celé outfity ktoré k tomu pasujú — ty vyberieš</span>
+        </div>
+      </div>
+      <div class="option">
+        <div class="option-letter p">B</div>
+        <div class="option-text">
+          <strong>Ty dopovieš čo k tomu chceš</strong>
+          <span>Povieš čo iné má modelka obliecť</span>
+        </div>
+      </div>
+      <div class="option">
+        <div class="option-letter m">C</div>
+        <div class="option-text">
+          <strong>Zvyšok nechaj neutrálny</strong>
+          <span>Klasické džínsy + biele tričko + tenisky — hero kus je tento jeden</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- KROK 2 -->
+  <div class="section-label">
+    <div class="step-number c2">2</div>
+    <div>
+      <h2>Model / Modelka</h2>
+      <div class="subtitle">Kto bude na fotkách — a ako to riešiť</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Tri možnosti</div>
+    <div class="options">
+      <div class="option">
+        <div class="option-letter n">A</div>
+        <div class="option-text">
+          <strong>Mám modelku uloženú v Geme alebo nástroji</strong>
+          <span>Prompty budú obsahovať len: "Maintain exact same model from reference photo" — žiadny dlhý opis</span>
+        </div>
+      </div>
+      <div class="option">
+        <div class="option-letter p">B</div>
+        <div class="option-text">
+          <strong>Prikladám fotku modelky teraz</strong>
+          <span>Claude uzamkne odkaz na priloženú fotku — opäť krátky odkaz, nie dlhý opis</span>
+        </div>
+      </div>
+      <div class="option">
+        <div class="option-letter m">C</div>
+        <div class="option-text">
+          <strong>Nemám fotku — Claude navrhne</strong>
+          <span>Povieš pohlavie, vek, farbu vlasov, typ postavy → Claude navrhne presný popis → ty schválíš → popis ide do každého promptu celý</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight lagune">
+    💡 <strong>Kľúčové:</strong> Popis modela musí byť slovo za slovom identický vo všetkých 6 promptoch. To je základ konzistencie naprieč zábermi.
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- KROK 3 -->
+  <div class="section-label">
+    <div class="step-number c3">3</div>
+    <div>
+      <h2>Nástroj, prostredie a nálada</h2>
+      <div class="subtitle">5 otázok naraz — a máš všetko čo treba</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="rules-list">
+      <div class="rule-item">
+        <div class="rule-icon l">🛠</div>
+        <div class="rule-text">
+          <strong>Aký nástroj používaš?</strong>
+          <p>Gemini Gem / Midjourney / DALL-E / Ideogram / Neviem — každý dostane iné inštrukcie na konzistenciu</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-icon n">📱</div>
+        <div class="rule-text">
+          <strong>Kde skončia fotky?</strong>
+          <p>Instagram / Facebook / Vinted / web / e-shop / stories — ovplyvní framing a formát záberov</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-icon p">✨</div>
+        <div class="rule-text">
+          <strong>Aká nálada značky?</strong>
+          <p>Luxusná / casual / French girl / boho / streetwear / minimalistická — ovplyvní film stock a osvetlenie</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-icon m">🌍</div>
+        <div class="rule-text">
+          <strong>Prostredie</strong>
+          <p>Máš niečo konkrétne v hlave? Alebo Claude navrhne 3 možnosti ktoré pasujú k outfitu</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-icon l">📸</div>
+        <div class="rule-text">
+          <strong>Štýl fotenia</strong>
+          <p><strong>Profesionálny fotograf na lokácii</strong> — modelka vie že je fotená, zámerný pohyb, prostredie živé<br>
+          <strong>Candid / street style</strong> — modelka je súčasťou scény, nikto ju špeciálne nefotí</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- KROK 4 -->
+  <div class="section-label">
+    <div class="step-number c4">4</div>
+    <div>
+      <h2>Technické parametre</h2>
+      <div class="subtitle">Film stock + objektív + svetlo — identické vo všetkých 6 záberoch</div>
+    </div>
+  </div>
+
+  <div class="card" style="padding: 0; overflow: hidden;">
+    <table class="tech-table">
+      <thead>
+        <tr>
+          <th>Nálada</th>
+          <th>Film stock</th>
+          <th>Objektív</th>
+          <th>Svetlo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="mood-tag n">Casual / lifestyle</span></td>
+          <td>Kodak Portra 400</td>
+          <td>85mm</td>
+          <td>Warm directional afternoon sun</td>
+        </tr>
+        <tr>
+          <td><span class="mood-tag l">Luxusný / editorial</span></td>
+          <td>Fujifilm 400H</td>
+          <td>85mm</td>
+          <td>Soft diffused natural daylight</td>
+        </tr>
+        <tr>
+          <td><span class="mood-tag">Streetwear / urban</span></td>
+          <td>Ilford HP5 (B&W)</td>
+          <td>50mm</td>
+          <td>Harsh directional side light</td>
+        </tr>
+        <tr>
+          <td><span class="mood-tag m">Boho / outdoor</span></td>
+          <td>Kodak Gold 200</td>
+          <td>50mm</td>
+          <td>Warm golden hour backlight</td>
+        </tr>
+        <tr>
+          <td><span class="mood-tag p">French girl / Paríž</span></td>
+          <td>Kodak Portra 400</td>
+          <td>85mm</td>
+          <td>Soft warm natural afternoon light</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="highlight menthe">
+    🔒 <strong>Pravidlo konzistencie:</strong> Rovnaký film stock, rovnaký objektív, rovnaké svetlo vo VŠETKÝCH 6 promptoch. Ak zmeníš čo len film stock v jednom záber, AI revertne na iný štýl a shoot stratí jednotnosť.
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- KROK 5 -->
+  <div class="section-label">
+    <div class="step-number c5">5</div>
+    <div>
+      <h2>6 typov záberov</h2>
+      <div class="subtitle">Kompletná sada pre profesionálny brand photoshoot</div>
+    </div>
+  </div>
+
+  <div class="key-rule">
+    <h3>Pravidlo živého prostredia</h3>
+    <p>Každý prompt opisuje čo sa deje OKOLO modelky — nie len kde stojí. Ľudia okolo nej majú vlastný život. Modelka nie je nalepená na pozadie — je jeho súčasťou.</p>
+    <div class="compare">
+      <div class="compare-item compare-bad">standing in front of a busy restaurant</div>
+      <div class="compare-item compare-good">seated at a corner table, waiter passing behind her, other diners laughing nearby</div>
+    </div>
+  </div>
+
+  <div class="shots-grid" style="margin-top: 20px;">
+    <div class="shot-card s1">
+      <div class="shot-icon">🖼</div>
+      <div class="shot-name">Široký záber</div>
+      <div class="shot-platform">Web banner · Vinted hlavná fotka · Facebook cover</div>
+      <div class="shot-rule">Celá postava od hlavy po päty. Dostatok priestoru nad hlavou pre text alebo logo. Pohyb: mid-stride / walking.</div>
+    </div>
+    <div class="shot-card s2">
+      <div class="shot-icon">📱</div>
+      <div class="shot-name">Trištvrtový záber</div>
+      <div class="shot-platform">Instagram feed · E-shop · Vinted listing</div>
+      <div class="shot-rule">Od pol stehna nahor. Priamy kontakt s kamerou alebo prirodzený pohyb. Najdôležitejší záber pre e-commerce.</div>
+    </div>
+    <div class="shot-card s3">
+      <div class="shot-icon">👤</div>
+      <div class="shot-name">Bočný profil</div>
+      <div class="shot-platform">Instagram · Facebook · Editorial</div>
+      <div class="shot-rule">Plná silueta zboku. Pohľad do prostredia, zaujatá scénou — nie do kamery. Ukazuje strih a splývavosť.</div>
+    </div>
+    <div class="shot-card s4">
+      <div class="shot-icon">🔍</div>
+      <div class="shot-name">Detailný záber</div>
+      <div class="shot-platform">Vinted (textúra) · Instagram carousel · Blog</div>
+      <div class="shot-rule">Extrémny close-up na vzor látky, kabelku, topánky alebo šperky. Zákazník cíti materiál cez obrazovku.</div>
+    </div>
+    <div class="shot-card s5">
+      <div class="shot-icon">🚶</div>
+      <div class="shot-name">Zadný uhol</div>
+      <div class="shot-platform">Vinted · Instagram carousel · Stories</div>
+      <div class="shot-rule">Pohľad zozadu. Odhaľuje siluetu a detaily chrbta. Akcia: walking into the scene / looking back over shoulder.</div>
+    </div>
+    <div class="shot-card s6">
+      <div class="shot-icon">☕</div>
+      <div class="shot-name">Lifestyle záber</div>
+      <div class="shot-platform">Facebook stories · Newsletter · Brand storytelling</div>
+      <div class="shot-rule">Candid, prirodzený moment s emóciou — smiech, káva, interakcia. Najživší záber zo všetkých.</div>
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <!-- KROK 6 -->
+  <div class="section-label">
+    <div class="step-number c6">6</div>
+    <div>
+      <h2>Konzistencia podľa nástroja</h2>
+      <div class="subtitle">Každý nástroj má iný spôsob udržania modela a outfitu naprieč zábermi</div>
+    </div>
+  </div>
+
+  <div class="tool-grid">
+    <div class="tool-card">
+      <div class="tool-name"><span class="tool-dot n"></span> Gemini Gem</div>
+      <div class="tool-tip">Skopíruj popis modelky a oblečenia do <strong>systémových inštrukcií Gemu</strong> — raz nastaviš, Gem si pamätá v každom chate.</div>
+      <div class="tool-tip">⚠️ Pre každý záber začni <strong>nový chat</strong> — predídeš driftu.</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name"><span class="tool-dot p"></span> Midjourney</div>
+      <div class="tool-tip">Použi <span class="code-pill">--cref [URL fotky modelky]</span> pre konzistenciu tváre.</div>
+      <div class="tool-tip">Rovnaké <span class="code-pill">--seed</span> číslo vo všetkých promptoch pre vizuálnu jednotu.</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name"><span class="tool-dot m"></span> DALL-E / ChatGPT</div>
+      <div class="tool-tip">Každý prompt musí byť <strong>plne sebestačný</strong> — obsahuje všetko: popis modela aj oblečenia.</div>
+      <div class="tool-tip">⚠️ Začni <strong>novú konverzáciu</strong> pre každý záber zvlášť.</div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-name"><span class="tool-dot l"></span> Neznámy nástroj</div>
+      <div class="tool-tip">Prompty sú navrhnuté ako <strong>plne sebestačné</strong> — nič nepredpokladajú.</div>
+      <div class="tool-tip">⚠️ <strong>Nový chat = nový záber.</strong> Nikdy nevkladaj viac promptov za sebou do toho istého chatu.</div>
+    </div>
+  </div>
+
+  <div class="highlight nectarine" style="margin-top: 20px;">
+    ⚠️ <strong>Najčastejšia chyba:</strong> Vloženie všetkých 6 promptov za sebou do jedného chatu. AI si pamätá predchádzajúce obrázky a začne meniť detaily oblečenia a tváre. Každý záber = nový chat.
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <h3>Brand Photography Skill</h3>
+  <p>Vytvorené s Claude · Funguje s Gemini, Midjourney, DALL-E a ďalšími nástrojmi</p>
+</div>
+
+</body>
+</html>
