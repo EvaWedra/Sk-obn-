@@ -1,0 +1,32 @@
+[
+  {
+    "id": "n1",
+    "branchId": "ba",
+    "userId": null,
+    "type": "new_task",
+    "taskId": "t3",
+    "message": "Nová úloha v pobočke Bratislava: \"Objednať kancelárske potreby\"",
+    "createdAt": "2026-07-27T08:15:00.000Z",
+    "readBy": ["u_admin"]
+  },
+  {
+    "id": "n2",
+    "branchId": "ke",
+    "userId": "u_mario",
+    "type": "assigned",
+    "taskId": "t2",
+    "message": "Bola vám priradená úloha: \"Opraviť tlačiareň na recepcii\"",
+    "createdAt": "2026-07-27T09:30:00.000Z",
+    "readBy": []
+  },
+  {
+    "id": "n3",
+    "branchId": "ba",
+    "userId": null,
+    "type": "completed",
+    "taskId": "t4",
+    "message": "Úloha \"Vyzdvihnúť balík z pošty\" bola označená ako hotová",
+    "createdAt": "2026-07-26T14:00:00.000Z",
+    "readBy": ["u_admin", "u_petra"]
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "t1",
+    "sectionId": "weekly",
+    "branchId": "ba",
+    "title": "Pripraviť týždenný report pre klienta",
+    "description": "Zosumarizovať uplynulý týždeň, priložiť čísla z dashboardu a poslať do piatku 12:00.",
+    "priority": "dolezita",
+    "tags": ["dokumenty", "klienti"],
+    "assigneeId": "u_petra",
+    "createdBy": "u_admin",
+    "createdAt": "2026-07-25T07:00:00.000Z",
+    "updatedAt": "2026-07-25T07:00:00.000Z",
+    "status": "riesi_sa",
+    "recurrence": "weekly",
+    "photos": [],
+    "comments": [
+      {
+        "id": "c1",
+        "authorId": "u_petra",
+        "text": "Robím na tom, dnes to dokončím.",
+        "createdAt": "2026-07-27T10:05:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "t2",
+    "sectionId": "fix",
+    "branchId": "ke",
+    "title": "Opraviť tlačiareň na recepcii",
+    "description": "Tlačiareň hlási zaseknutý papier a nechce sa reštartovať.",
+    "priority": "urgentna",
+    "tags": ["oprava"],
+    "assigneeId": "u_mario",
+    "createdBy": "u_admin",
+    "createdAt": "2026-07-27T09:30:00.000Z",
+    "updatedAt": "2026-07-27T09:30:00.000Z",
+    "status": "nove",
+    "recurrence": "none",
+    "photos": [],
+    "comments": []
+  },
+  {
+    "id": "t3",
+    "sectionId": "buy",
+    "branchId": "ba",
+    "title": "Objednať kancelárske potreby",
+    "description": "Papier do tlačiarne, toner, zošívačky a perá.",
+    "priority": "normalna",
+    "tags": ["nákup", "kancelária"],
+    "assigneeId": null,
+    "createdBy": "u_zuzka",
+    "createdAt": "2026-07-27T08:15:00.000Z",
+    "updatedAt": "2026-07-27T08:15:00.000Z",
+    "status": "nove",
+    "recurrence": "none",
+    "photos": [],
+    "comments": []
+  },
+  {
+    "id": "t4",
+    "sectionId": "do",
+    "branchId": "ba",
+    "title": "Vyzdvihnúť balík z pošty",
+    "description": "Balík od dodávateľa, potvrdenie o odoslaní je v maile.",
+    "priority": "nizka",
+    "tags": ["kancelária"],
+    "assigneeId": "u_zuzka",
+    "createdBy": "u_zuzka",
+    "createdAt": "2026-07-25T11:00:00.000Z",
+    "updatedAt": "2026-07-26T14:00:00.000Z",
+    "status": "hotove",
+    "recurrence": "none",
+    "photos": [],
+    "comments": [
+      {
+        "id": "c2",
+        "authorId": "u_zuzka",
+        "text": "Vyzdvihnuté, balík je na recepcii.",
+        "createdAt": "2026-07-26T14:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "t5",
+    "sectionId": "notes",
+    "branchId": "ke",
+    "title": "Nový dodávateľ kávy",
+    "description": "Kontakt na nového dodávateľa: Coffee Košice s.r.o., tel. 0900 123 456. Vzorky by mali dorazit budúci týždeň.",
+    "priority": "nizka",
+    "tags": ["kancelária"],
+    "assigneeId": null,
+    "createdBy": "u_mario",
+    "createdAt": "2026-07-24T13:00:00.000Z",
+    "updatedAt": "2026-07-24T13:00:00.000Z",
+    "status": "nove",
+    "recurrence": "none",
+    "photos": [],
+    "comments": []
+  }
+]
